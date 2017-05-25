@@ -74,6 +74,7 @@ public class PermissionChecker {
     }
 
     public static boolean hasAllPermissionRequest(@NonNull int[] grantResults){
+        if (grantResults == null || grantResults.length == 0) return false;
         for (int grant : grantResults) {
             if (grant == android.support.v4.content.PermissionChecker.PERMISSION_DENIED) return false;
         }
